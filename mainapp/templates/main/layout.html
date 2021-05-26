@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      type="text/css">
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+  <script src="https://kit.fontawesome.com/7257e43cbf.js" crossorigin="anonymous"></script>
+
+ </head>
+ <body>
+<aside>
+   <img class="change" src="{% static 'main/img/rest.svg' %}" alt="fon">
+  <span class="logo">BELOBORA</span>
+ <h3>Навигация</h3>
+ <ul>
+     <a href="{% url 'index' %}"><li><i class="fas fa-archive"></i>Главная</li></a>
+     <a href="{% url 'about' %}"><li><i class="fas fa-dice-d6"></i>Зарезервировать столик</li></a>
+     <a href=""><li><i class="fas fa-car"></i>  Заказать еду</li></a>
+     <a href="{% url 'news_home' %}"><li><i class="fas fa-car"></i>Новости</li></a>
+     <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Новый резерв</li></a>
+ </ul>
+</aside>
+<main>
+ {% block content %}
+ {% endblock %}
+</main>
+
+
+ </body>
+</html>
+
+  <!--
+
+{% include "mainapp/includes/some.html" %}
+
+ <link rel="stylesheet" href="/static/css/bootstarap.min.css" type="text/css">
+
+ {% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+        type="text/css">
+
+ -->
